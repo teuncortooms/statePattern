@@ -18,19 +18,12 @@ namespace StatePatternWPF
         public MainWindow()
         {
             InitializeComponent();
-            //this.KeyPreview = true;
 
             // TODO: IoC container?
             logger = Logger.CreateLogger();
             hero = new Hero(new IdleState(logger));
+            listBox1.ItemsSource = logger.Data;
         }
-
-        private void GUIUpdater(object sender, EventArgs e)
-        {
-            //listBox1.Items.Clear();
-            listBox1.ItemsSource = logger.Data.ToArray();
-        }
-
 
         private void Window_KeyDown(object sender, KeyEventArgs e)
         {
