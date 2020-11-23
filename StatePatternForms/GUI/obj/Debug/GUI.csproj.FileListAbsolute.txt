@@ -1,0 +1,10 @@
+C:\Users\884573\Documents\Repositories\StatePattern\GUI\obj\Debug\GUI.csprojAssemblyReference.cache
+C:\Users\884573\Documents\Repositories\StatePattern\GUI\obj\Debug\GUI.ViewPort.resources
+C:\Users\884573\Documents\Repositories\StatePattern\GUI\obj\Debug\GUI.Properties.Resources.resources
+C:\Users\884573\Documents\Repositories\StatePattern\GUI\obj\Debug\GUI.csproj.GenerateResource.cache
+C:\Users\884573\Documents\Repositories\StatePattern\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.cache
+C:\Users\884573\Documents\Repositories\StatePattern\GUI\bin\Debug\GUI.exe.config
+C:\Users\884573\Documents\Repositories\StatePattern\GUI\bin\Debug\GUI.exe
+C:\Users\884573\Documents\Repositories\StatePattern\GUI\bin\Debug\GUI.pdb
+C:\Users\884573\Documents\Repositories\StatePattern\GUI\obj\Debug\GUI.exe
+C:\Users\884573\Documents\Repositories\StatePattern\GUI\obj\Debug\GUI.pdb

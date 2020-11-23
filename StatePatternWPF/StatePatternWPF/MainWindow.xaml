@@ -1,0 +1,15 @@
+﻿<Window x:Class="StatePatternWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StatePatternWPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" KeyDown="Window_KeyDown" KeyUp="Window_KeyUp">
+    <Grid>
+        <Rectangle Stroke="Black" Margin="0,363,0,0" Fill="#FF661212"/>
+        <Image HorizontalAlignment="Left" Height="100" Margin="403,262,0,0" VerticalAlignment="Top" Width="100" Source="898b3642990ebd42.png"/>
+        <ListBox x:Name="listBox1" HorizontalAlignment="Left" Height="300" Margin="10,10,0,0" VerticalAlignment="Top" Width="200" VerticalContentAlignment="Bottom" ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.HorizontalScrollBarVisibility="Disabled" IsSynchronizedWithCurrentItem="False"/>
+
+    </Grid>
+</Window>
