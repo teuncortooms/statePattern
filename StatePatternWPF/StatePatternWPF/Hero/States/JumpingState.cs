@@ -1,4 +1,5 @@
 ﻿using HeroGame.LoggerNS;
+using StatePatternWPF;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -8,30 +9,29 @@ namespace HeroGame.HeroNS.States
 {
     class JumpingState : State
     {
-        readonly Timer timer;
+        private readonly Timer timer;
 
         public JumpingState(Logger logger) : base(logger)
         {
             timer = new Timer(1000);
-            timer.Elapsed += OnTimedEvent;
+            timer.Elapsed += LandOnTimedEvent;
             timer.Start();
         }
 
-        private void OnTimedEvent(Object source, ElapsedEventArgs e)
+        private void LandOnTimedEvent(Object source, ElapsedEventArgs e)
         {
-            logger.Log("Landed.");
+            App.Current.Dispatcher.Invoke(delegate
+            {
+                logger.Log("Landed.");
+            }); 
+            
             timer.Stop();
             Hero.ChangeState(new IdleState(logger));
         }
 
         public override void Jump()
         {
-            logger.Log("I cannot jump while jumping.");
-        }
-
-        public override void MoveForward()
-        {
-            logger.Log("I cannot move while jumping");
+            logger.Log("Backflip!");
         }
 
         public override void Shoot()
@@ -52,6 +52,11 @@ namespace HeroGame.HeroNS.States
         public override void Stop()
         {
             logger.Log("Cannot stop mid-air.");
+        }
+
+        public override void MoveForward()
+        {
+            logger.Log("I cannot move while jumping");
         }
     }
 }

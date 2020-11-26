@@ -10,22 +10,27 @@ namespace HeroGame.LoggerNS
     public class Logger
     {
         private static Logger logger;
-        public ObservableCollection<string> Data { get; private set; } = new ObservableCollection<string>();
+        public ObservableCollection<Item> Data { get; private set; } = new ObservableCollection<Item>();
+        private object dataLock;
 
         public static Logger CreateLogger()
         {
-            if (logger == null) logger = new Logger(); 
+            if (logger == null) logger = new Logger();
             return logger;
         }
 
         private Logger()
         {
-
+            dataLock = new object();
         }
 
         public void Log(string input)
         {
-            Data.Add(input);
+            lock (dataLock)
+            {
+                //Data.Insert(0, input);
+                Data.Add(new Item(input));
+            }
             Console.WriteLine(input);
         }
     }

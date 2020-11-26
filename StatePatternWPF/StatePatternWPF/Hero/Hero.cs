@@ -16,7 +16,7 @@ namespace HeroGame.HeroNS
         public void ChangeState(State state)
         {
             this.state = state;
-            state.Hero = this; // lazy loading
+            state.Hero = this;
         }
 
         public void Jump()

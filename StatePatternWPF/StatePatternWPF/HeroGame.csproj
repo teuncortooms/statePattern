@@ -68,6 +68,7 @@
     <Compile Include="Hero\States\JumpingState.cs" />
     <Compile Include="Hero\States\RunningState.cs" />
     <Compile Include="Hero\States\State.cs" />
+    <Compile Include="Logger\Item.cs" />
     <Compile Include="Logger\Logger.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>

@@ -2,6 +2,7 @@
 using HeroGame.HeroNS.States;
 using HeroGame.LoggerNS;
 using System;
+using System.Collections.Specialized;
 using System.Windows;
 using System.Windows.Input;
 
@@ -22,7 +23,17 @@ namespace StatePatternWPF
             // TODO: IoC container?
             logger = Logger.CreateLogger();
             hero = new Hero(new IdleState(logger));
+            listBox1.Items.Clear();
             listBox1.ItemsSource = logger.Data;
+            ((INotifyCollectionChanged)listBox1.ItemsSource).CollectionChanged +=
+                new NotifyCollectionChangedEventHandler(ScrollDownOnCollectionChanged);
+        }
+
+        public void ScrollDownOnCollectionChanged(Object sender, NotifyCollectionChangedEventArgs e)
+        {
+            listBox1.SelectedIndex = listBox1.Items.Count - 1;
+            listBox1.UpdateLayout(); 
+            listBox1.ScrollIntoView(listBox1.SelectedItem);
         }
 
         private void Window_KeyDown(object sender, KeyEventArgs e)
@@ -33,7 +44,6 @@ namespace StatePatternWPF
                     hero.MoveForward();
                     break;
                 case Key.S:
-                    hero.Stop();
                     break;
                 case Key.A:
                     hero.TurnLeft();

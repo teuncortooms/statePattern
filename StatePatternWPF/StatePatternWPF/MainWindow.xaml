@@ -9,7 +9,13 @@
     <Grid>
         <Rectangle Stroke="Black" Margin="0,363,0,0" Fill="#FF661212"/>
         <Image HorizontalAlignment="Left" Height="100" Margin="403,262,0,0" VerticalAlignment="Top" Width="100" Source="898b3642990ebd42.png"/>
-        <ListBox x:Name="listBox1" HorizontalAlignment="Left" Height="300" Margin="10,10,0,0" VerticalAlignment="Top" Width="200" VerticalContentAlignment="Bottom" ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.HorizontalScrollBarVisibility="Disabled" IsSynchronizedWithCurrentItem="False"/>
+        <ListBox x:Name="listBox1" HorizontalAlignment="Left" Height="300" Margin="10,10,0,0" VerticalAlignment="Top" Width="200" VerticalContentAlignment="Top" ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.HorizontalScrollBarVisibility="Disabled" IsSynchronizedWithCurrentItem="False">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <VirtualizingStackPanel VerticalAlignment="Bottom"/>
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+        </ListBox>
 
     </Grid>
 </Window>
