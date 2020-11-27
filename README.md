@@ -1,4 +1,2 @@
 # statePattern
-Forms versie werkt redelijk
-
-WPF is work in progress
+Forms versie werkt redelijk. WPF-versie is verder uitgewerkt.
