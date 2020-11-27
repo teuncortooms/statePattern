@@ -9,6 +9,17 @@ namespace HeroGame.HeroNS.States
     {
         public RunningState(Logger logger) : base(logger) { } // without logger state could be an interface
 
+
+        public override void MoveForward()
+        {
+        }
+
+        public override void Stop()
+        {
+            logger.Log("Stopped.");
+            Hero.ChangeState(new IdleState(logger));
+        }
+
         public override void Jump()
         {
             logger.Log("Jumping forward!");
@@ -28,16 +39,6 @@ namespace HeroGame.HeroNS.States
         public override void TurnRight()
         {
             logger.Log("Turn right while running.");
-        }
-
-        public override void Stop()
-        {
-            logger.Log("Stopped.");
-            Hero.ChangeState(new IdleState(logger));
-        }
-
-        public override void MoveForward()
-        {
         }
     }
 }
