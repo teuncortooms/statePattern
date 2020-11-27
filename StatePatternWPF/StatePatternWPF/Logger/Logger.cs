@@ -10,7 +10,7 @@ namespace HeroGame.LoggerNS
     public class Logger
     {
         private static Logger logger;
-        public ObservableCollection<Item> Data { get; private set; } = new ObservableCollection<Item>();
+        public ObservableCollection<Item> Data { get; private set; }
         private object dataLock;
 
         public static Logger CreateLogger()
@@ -21,6 +21,7 @@ namespace HeroGame.LoggerNS
 
         private Logger()
         {
+            Data = new ObservableCollection<Item>();
             dataLock = new object();
         }
 
