@@ -15,11 +15,11 @@ namespace HeroGame.HeroNS.States
             this.logger = logger;
         }
 
-        abstract public void Jump();
-        abstract public void MoveForward();
-        abstract public void Stop();
-        abstract public void Shoot();
-        abstract public void TurnLeft();
-        abstract public void TurnRight();
+        public abstract void Jump();
+        public abstract void MoveForward();
+        public abstract void Stop();
+        public abstract void Shoot();
+        public abstract void TurnLeft();
+        public abstract void TurnRight();
     }
 }

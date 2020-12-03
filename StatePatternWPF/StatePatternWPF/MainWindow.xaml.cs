@@ -20,12 +20,17 @@ namespace StatePatternWPF
         {
             InitializeComponent();
 
-            // TODO: IoC container?
-            logger = Logger.CreateLogger();
+            logger = Logger.GetInstance();
             hero = new Hero(new IdleState(logger));
+
+            SetupListBox();
+        }
+
+        private void SetupListBox()
+        {
             listBox1.Items.Clear();
             listBox1.ItemsSource = logger.Data;
-            ((INotifyCollectionChanged)listBox1.ItemsSource).CollectionChanged +=
+            ((INotifyCollectionChanged) listBox1.ItemsSource).CollectionChanged +=
                 new NotifyCollectionChangedEventHandler(ScrollDownOnCollectionChanged);
         }
 

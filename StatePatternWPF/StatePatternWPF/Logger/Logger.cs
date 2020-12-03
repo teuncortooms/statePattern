@@ -13,7 +13,7 @@ namespace HeroGame.LoggerNS
         public ObservableCollection<Item> Data { get; private set; }
         private object dataLock;
 
-        public static Logger CreateLogger()
+        public static Logger GetInstance()
         {
             if (logger == null) logger = new Logger();
             return logger;
