@@ -11,7 +11,7 @@ namespace HeroGame.LoggerNS
     {
         private static Logger logger;
         public ObservableCollection<Item> Data { get; private set; }
-        private object dataLock;
+        private readonly object dataLock;
 
         public static Logger GetInstance()
         {

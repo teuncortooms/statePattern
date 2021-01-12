@@ -9,7 +9,6 @@ namespace HeroGame.HeroNS.States
     {
         public RunningState(Logger logger) : base(logger) { } // without logger state could be an interface
 
-
         public override void MoveForward()
         {
         }

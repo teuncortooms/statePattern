@@ -18,7 +18,7 @@ namespace HeroGame.HeroNS.States
             timer.Start();
         }
 
-        private void LandOnTimedEvent(Object source, ElapsedEventArgs e)
+        private void LandOnTimedEvent(object source, ElapsedEventArgs e)
         {
             App.Current.Dispatcher.Invoke(delegate
             {
